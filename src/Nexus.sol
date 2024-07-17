@@ -7,13 +7,13 @@ contract NexusNFT is ERC721 {
     mapping(address => uint256) public no_of_mintedNFTs;
     address public deployer;
 
-    constructor() ERC721("Nexus NFT", "Nex") {
+    constructor() ERC721("NexusNFT", "Nex") {
         deployer = msg.sender;
     }
 
     function _baseURI() internal pure override returns (string memory) {
         return
-            "https://amaranth-genuine-kangaroo-139.mypinata.cloud/ipfs/QmSou3r5DhGLjtN9gJVYK9U3VhGKNEwupUCTsYfJTZQQDx/";
+            "https://amaranth-genuine-kangaroo-139.mypinata.cloud/ipfs/QmQ4VoEGnT51XViT3o3WEzchpKmeax7ngE4YtVnmEJUMq4/";
     }
 
     function safeMint(address to, uint256 tokenId) public payable {

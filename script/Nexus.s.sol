@@ -11,10 +11,11 @@ contract DeployNexusNFT is Script {
 
     function run() public {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
+        address deployer = 0x84b5545E9Bdc62A65bB2353a4cC112e3C6f3ae96;
         vm.startBroadcast(deployerPrivateKey);
         _nexusNFT = new NexusNFT();
-        _nexusNFT.safeMint(address(this), 0);
-        _nexusNFT.safeMint(address(this), 1);
+        _nexusNFT.safeMint(deployer, 0);
+        _nexusNFT.safeMint(deployer, 1);
         vm.stopBroadcast();
         writeAddressesToFile(address(_nexusNFT), "MetaNFT Address");
     }
