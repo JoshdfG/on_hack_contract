@@ -5,7 +5,7 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract MetaNFT is ERC721 {
-    mapping(address => uint256) public mintedNFTs;
+    mapping(address => uint256) public no_of_mintedNFTs;
 
     constructor() ERC721("Meta NFT", "MNFT") {}
 
@@ -15,8 +15,8 @@ contract MetaNFT is ERC721 {
     }
 
     function safeMint(address to, uint256 tokenId) public payable {
-        require(mintedNFTs[msg.sender] < 2, "Already minted 2 NFTs");
-        mintedNFTs[msg.sender]++;
+        require(no_of_mintedNFTs[msg.sender] < 2, "Already minted 2 NFTs");
+        no_of_mintedNFTs[msg.sender]++;
         _safeMint(to, tokenId);
     }
 }
