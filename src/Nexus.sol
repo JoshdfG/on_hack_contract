@@ -4,14 +4,14 @@ pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract MetaNFT is ERC721 {
+contract NexusNFT is ERC721 {
     mapping(address => uint256) public no_of_mintedNFTs;
 
-    constructor() ERC721("Meta NFT", "MNFT") {}
+    constructor() ERC721("Nexus NFT", "Nex") {}
 
     function _baseURI() internal pure override returns (string memory) {
         return
-            "https://blue-clear-mole-324.mypinata.cloud/ipfs/Qmcd7BP4Ar7DwCiaFKnhi7kmebVdiLvm4TMcAB6M7dpdHS/";
+            "https://amaranth-genuine-kangaroo-139.mypinata.cloud/ipfs/Qma3E93qKVEL8bbnAyGtyJUW7iJWuZ1xK7QXubh73eD2nf/";
     }
 
     function safeMint(address to, uint256 tokenId) public payable {
